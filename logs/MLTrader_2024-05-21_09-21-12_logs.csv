@@ -1,0 +1,39 @@
+2024-05-21 09:21:12,314: root: INFO: MLTrader : Executing the initialize lifecycle method
+2024-05-21 09:21:16,480: root: INFO: Current backtesting datetime 2023-12-15 08:30:00-05:00
+2024-05-21 09:21:16,483: root: INFO: MLTrader : Executing the before_market_opens lifecycle method
+2024-05-21 09:21:16,486: root: INFO: Current backtesting datetime 2023-12-15 09:30:00-05:00
+2024-05-21 09:21:16,486: root: INFO: MLTrader : Executing the before_starting_trading lifecycle method
+2024-05-21 09:21:16,488: root: INFO: [34mMLTrader : Executing the on_trading_iteration lifecycle method at 2024-05-21 09:21:16[0m
+2024-05-21 09:21:16,502: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2024-05-21 09:21:16,517: root: WARNING: quote is not implemented for YahooData, but USD was passed as the quote
+2024-05-21 09:21:17,164: root: ERROR: 'raw'
+2024-05-21 09:21:17,166: root: ERROR: Traceback (most recent call last):
+  File "C:\Users\Ayomide\Trading-Bot\venv\lib\site-packages\lumibot\strategies\strategy_executor.py", line 829, in run
+    self._run_trading_session()
+  File "C:\Users\Ayomide\Trading-Bot\venv\lib\site-packages\lumibot\strategies\strategy_executor.py", line 780, in _run_trading_session
+    self._on_trading_iteration()
+  File "C:\Users\Ayomide\Trading-Bot\venv\lib\site-packages\lumibot\strategies\strategy_executor.py", line 274, in func_output
+    result = func_input(self, *args, **kwargs)
+  File "C:\Users\Ayomide\Trading-Bot\venv\lib\site-packages\lumibot\strategies\strategy_executor.py", line 298, in func_output
+    result = func_input(self, *args, **kwargs)
+  File "C:\Users\Ayomide\Trading-Bot\venv\lib\site-packages\lumibot\strategies\strategy_executor.py", line 87, in func_output
+    return func_input(self, *args, **kwargs)
+  File "C:\Users\Ayomide\Trading-Bot\venv\lib\site-packages\lumibot\strategies\strategy_executor.py", line 378, in _on_trading_iteration
+    on_trading_iteration()
+  File "C:\Users\Ayomide\Trading-Bot\venv\lib\site-packages\lumibot\tools\decorators.py", line 62, in func_output
+    frame, result = call_function_get_frame(func_input, *args, **kwargs)
+  File "C:\Users\Ayomide\Trading-Bot\venv\lib\site-packages\lumibot\tools\decorators.py", line 30, in call_function_get_frame
+    result = func(*args, **kwargs)
+  File "C:\Users\Ayomide\Trading-Bot\tradingbot.py", line 48, in on_trading_iteration
+    news = self.get_news()
+  File "C:\Users\Ayomide\Trading-Bot\tradingbot.py", line 41, in get_news
+    news = [ev.__dict__["raw"]["headline"] for ev in news]
+  File "C:\Users\Ayomide\Trading-Bot\tradingbot.py", line 41, in <listcomp>
+    news = [ev.__dict__["raw"]["headline"] for ev in news]
+KeyError: 'raw'
+
+2024-05-21 09:21:17,170: root: INFO: MLTrader : Executing the on_bot_crash event method
+2024-05-21 09:21:17,186: root: INFO: Backtesting finished
+2024-05-21 09:21:17,188: root: WARNING: Cannot plot returns because the strategy returns are missing
+2024-05-21 09:21:17,454: root: WARNING: Cannot create a tearsheet because the strategy returns are missing
+2024-05-21 09:21:17,454: backtest_stats: INFO: Backtest took 0:00:05.206350 for a speed of 0.000
